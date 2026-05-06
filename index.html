@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Associazione Alumni SUISS</title>
+<meta name="description" content="Sito ufficiale dell'Associazione Alumni SUISS: community, networking, eventi, mentoring, career e iniziative culturali.">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    --blu-istituzionale: #0b1f3a;
+    --blu-scuro: #061226;
+    --oro: #d4af37;
+    --avorio: #f5efe6;
+    --marrone: #6b3f2d;
+    --testo: #2f241f;
+    --bianco: #ffffff;
+    --ombra: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* BANNER SUPERIORE */
+.top-banner {
+    background-color: var(--blu-istituzionale);
+    min-height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 42px;
+}
+
+.patronage-logos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.patronage-logos img {
+    height: 34px;
+    width: auto;
+    background-color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.join-button,
+.login-button {
+    color: white;
+    border: 1px solid white;
+    padding: 7px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.join-button:hover,
+.login-button:hover {
+    background-color: white;
+    color: var(--blu-istituzionale);
+}
+
+.language-switch {
+    display: flex;
+    gap: 10px;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.lang img {
+    width: 16px;
+    height: 11px;
+}
+
+.lang:hover {
+    background-color: white;
+    color: var(--blu-istituzionale);
+}
+
+.lang.active {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+    border-color: var(--oro);
+}
+
+/* MENU */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--blu-istituzionale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 14px 24px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-logo {
+    height: 28px;
+    margin-right: 12px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-links a,
+.dropdown > a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.menu-links a:hover,
+.dropdown > a:hover {
+    color: var(--oro);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--blu-istituzionale);
+    min-width: 235px;
+    top: 28px;
+    left: 0;
+    border: 1px solid rgba(255,255,255,0.25);
+    z-index: 2000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 13px 18px;
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    min-height: 660px;
+    background-image:
+        linear-gradient(rgba(11,31,58,0.20), rgba(245,239,230,0.25)),
+        url("hero.jpg");
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero-content {
+    background-color: rgba(245, 239, 230, 0.76);
+    padding: 42px 78px;
+    max-width: 880px;
+}
+
+.hero-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-size: 52px;
+    letter-spacing: 12px;
+}
+
+.hero h2 {
+    margin: 6px 0 22px;
+    color: #111;
+    font-size: 46px;
+    font-weight: normal;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.learn-button,
+.secondary-hero-button {
+    display: inline-block;
+    padding: 12px 34px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.learn-button {
+    background-color: white;
+    color: black;
+}
+
+.secondary-hero-button {
+    background-color: var(--blu-istituzionale);
+    color: white;
+}
+
+/* SEZIONI GENERALI */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 85px 40px;
+}
+
+section h2 {
+    color: var(--marrone);
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 20px;
+    line-height: 1.65;
+}
+
+.section-intro {
+    max-width: 850px;
+}
+
+.card {
+    background-color: var(--bianco);
+    padding: 32px;
+    margin-top: 28px;
+    border-left: 5px solid var(--oro);
+    box-shadow: var(--ombra);
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 24px;
+    margin-right: 12px;
+    background-color: var(--blu-istituzionale);
+    color: white;
+    padding: 14px 34px;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+/* IN EVIDENZA */
+.featured-section {
+    max-width: none;
+    background-color: var(--bianco);
+    padding: 70px 40px;
+    text-align: center;
+}
+
+.featured-section h2 {
+    color: var(--blu-istituzionale);
+}
+
+.featured-grid {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.featured-box {
+    background-color: var(--avorio);
+    border: 1px solid var(--blu-istituzionale);
+    padding: 28px;
+    text-align: left;
+}
+
+.featured-box h3 {
+    color: var(--blu-istituzionale);
+    margin-top: 0;
+}
+
+.featured-box p {
+    font-size: 16px;
+}
+
+/* NUMERI */
+.stats-section {
+    max-width: none;
+    background-color: var(--blu-istituzionale);
+    color: white;
+    padding: 60px 40px;
+}
+
+.stats-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.stat-card {
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 28px 20px;
+}
+
+.stat-number {
+    color: var(--oro);
+    font-size: 42px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* GRIGLIE */
+.grid-2,
+.grid-3 {
+    display: grid;
+    gap: 28px;
+    margin-top: 34px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card,
+.event-card,
+.profile-card,
+.doc-card {
+    background-color: var(--bianco);
+    border-left: 5px solid var(--oro);
+    padding: 28px;
+    box-shadow: var(--ombra);
+}
+
+.service-card h3,
+.event-card h3,
+.profile-card h3,
+.doc-card h3 {
+    margin-top: 0;
+    color: var(--blu-istituzionale);
+}
+
+.service-card p,
+.event-card p,
+.profile-card p,
+.doc-card p {
+    font-size: 16px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* DIRECTORY */
+.directory-preview {
+    background-color: var(--bianco);
+    padding: 34px;
+    border: 1px solid var(--blu-istituzionale);
+    box-shadow: var(--ombra);
+    margin-top: 35px;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.search-row input,
+.search-row select {
+    padding: 13px;
+    border: 1px solid var(--blu-istituzionale);
+    background-color: var(--avorio);
+    font-size: 15px;
+}
+
+.search-row button {
+    background-color: var(--blu-istituzionale);
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-row button:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+/* CAROSELLO FOTO */
+.photo-carousel {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border: 1px solid var(--blu-istituzionale);
+    background-color: var(--bianco);
+    box-shadow: var(--ombra);
+}
+
+.photo-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(11, 31, 58, 0.75);
+    color: white;
+    border: none;
+    font-size: 42px;
+    width: 48px;
+    height: 64px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* DONA */
+.donate-section {
+    background-color: var(--blu-istituzionale);
+    color: white;
+    max-width: none;
+    text-align: center;
+}
+
+.donate-section h2 {
+    color: var(--oro);
+}
+
+.donate-button {
+    display: inline-block;
+    margin-top: 22px;
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+    padding: 14px 36px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* CONTATTI */
+.contacts-section {
+    max-width: none;
+    background-color: var(--avorio);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 46px;
+    padding: 55px 42px;
+}
+
+.contact-box {
+    border: 1px solid var(--blu-istituzionale);
+    padding: 28px 32px;
+    min-height: 175px;
+    color: var(--testo);
+}
+
+.contact-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: var(--blu-istituzionale);
+}
+
+.contact-box p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--blu-istituzionale);
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--oro);
+    transform: scale(1.1);
+}
+
+/* TRASPARENZA */
+.transparency-section {
+    max-width: none;
+    background-color: var(--bianco);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.transparency-section h2 {
+    color: var(--blu-istituzionale);
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.transparency-section p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+}
+
+.docs-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.doc-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--blu-istituzionale);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.doc-button:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+/* NEWSLETTER */
+.newsletter-box {
+    background-color: var(--bianco);
+    border-left: 5px solid var(--oro);
+    padding: 34px;
+    box-shadow: var(--ombra);
+    margin-top: 30px;
+}
+
+.newsletter-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    padding: 14px;
+    border: 1px solid var(--blu-istituzionale);
+    background-color: var(--avorio);
+    font-size: 15px;
+}
+
+.newsletter-form button {
+    background-color: var(--blu-istituzionale);
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--oro);
+    color: var(--blu-istituzionale);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--blu-scuro);
+    color: white;
+    padding: 25px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.footer-social a:hover {
+    color: var(--oro);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .featured-grid,
+    .grid-3,
+    .docs-grid,
+    .contacts-section,
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-banner {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .patronage-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-actions {
+        flex-direction: column;
+    }
+
+    .sticky-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .nav-logo {
+        height: 42px;
+        margin-right: 0;
+    }
+
+    .menu-links {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        margin-top: 8px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 20px;
+        background-position: center 65%;
+    }
+
+    .hero-content {
+        padding: 26px 18px;
+    }
+
+    .hero-logo {
+        width: 85px;
+        margin-bottom: 14px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        letter-spacing: 4px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 50px 22px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    section p {
+        font-size: 17px;
+    }
+
+    .featured-grid,
+    .grid-2,
+    .grid-3,
+    .contacts-section,
+    .docs-grid,
+    .stats-grid,
+    .search-row,
+    .newsletter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-section,
+    .contacts-section {
+        padding: 35px 22px;
+    }
+
+    .primary-button,
+    .donate-button,
+    .newsletter-form button,
+    .search-row button {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .photo-carousel {
+        height: 240px;
+    }
+
+    .carousel-btn {
+        font-size: 32px;
+        width: 40px;
+        height: 54px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-banner">
+    <div class="patronage-logos">
+        <img src="logo-unito.png" alt="Università degli Studi di Torino">
+        <img src="logo-suiss.png" alt="SUISS">
+        <img src="logo-sue.png" alt="Scuola Ufficiali dell'Esercito">
+    </div>
+
+    <div class="top-actions">
+        <a href="ammissione.html" class="join-button">Diventa socio</a>
+        <a href="#directory" class="login-button">Area Alumni</a>
+
+        <div class="language-switch">
+            <a href="index.html" class="lang active"><img src="it.png" alt="Italiano"> IT</a>
+            <a href="en.html" class="lang"><img src="en.png" alt="English"> EN</a>
+        </div>
+    </div>
+</div>
+
+<nav class="sticky-menu">
+    <img src="logo.png" alt="Logo Alumni SUISS" class="nav-logo">
+
+    <div class="menu-links">
+        <div class="dropdown">
+            <a href="#chi-siamo">Chi siamo ▾</a>
+            <div class="dropdown-content">
+                <a href="#missione">Missione</a>
+                <a href="storia.html">La storia</a>
+                <a href="direttivo.html">Consiglio Direttivo</a>
+            </div>
+        </div>
+
+        <a href="#news-eventi">News ed eventi</a>
+        <a href="#networking">Networking</a>
+        <a href="#career">Career</a>
+        <a href="#directory">Directory</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#dona-ora">Dona ora</a>
+        <a href="#trasparenza">Trasparenza</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <img src="logo.png" alt="Logo Alumni SUISS" class="hero-logo">
+        <h1>ASSOCIAZIONE</h1>
+        <h2>ALUMNI SUISS</h2>
+        <p>
+            Una rete istituzionale, culturale e professionale che riunisce Alumni, studenti,
+            docenti e sostenitori della Scuola Universitaria Interdipartimentale in Scienze Strategiche.
+        </p>
+        <div class="hero-actions">
+            <a href="#chi-siamo" class="learn-button">Scopri di più</a>
+            <a href="ammissione.html" class="secondary-hero-button">Diventa socio</a>
+        </div>
+    </div>
+</header>
+
+<section id="in-evidenza" class="featured-section">
+    <h2>In evidenza</h2>
+
+    <div class="featured-grid">
+        <div class="featured-box">
+            <h3>Ultime news</h3>
+            <p><strong>Portale iscrizioni</strong><br>È disponibile la procedura online per richiedere l'ammissione all'Associazione.</p>
+            <p><strong>Statuto</strong><br>Il documento statutario è disponibile nella sezione Amministrazione trasparente.</p>
+        </div>
+
+        <div class="featured-box">
+            <h3>Prossimi eventi</h3>
+            <p><strong>Incontri Alumni</strong><br>Calendario in aggiornamento con conferenze, reunion e appuntamenti istituzionali.</p>
+            <p><strong>Webinar professionali</strong><br>Spazio dedicato a sicurezza, difesa, geopolitica e carriere strategiche.</p>
+        </div>
+
+        <div class="featured-box">
+            <h3>Community</h3>
+            <p><strong>Networking</strong><br>Costruzione progressiva della rete professionale Alumni SUISS.</p>
+            <p><strong>Mentorship</strong><br>Programma dedicato al collegamento tra studenti, giovani Alumni e professionisti.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section" aria-label="Numeri dell'Associazione">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Anno di riferimento</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Categorie associative</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Rete Alumni</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Community SUISS</div>
+        </div>
+    </div>
+</section>
+
+<section id="chi-siamo">
+    <h2>Chi siamo</h2>
+    <p class="section-intro">
+        L'Associazione Alumni SUISS nasce per consolidare il legame tra la Scuola, i suoi Alumni,
+        gli studenti, i docenti e le realtà istituzionali e professionali che condividono l'interesse
+        per le scienze strategiche.
+    </p>
+
+    <div class="card" id="missione">
+        <p>
+            La missione dell'Associazione è promuovere relazioni culturali e professionali,
+            valorizzare il percorso degli Alumni e favorire lo scambio di conoscenze nei campi
+            della sicurezza, della difesa, delle relazioni internazionali, della governance e
+            dell'analisi strategica.
+        </p>
+        <a href="direttivo.html" class="primary-button">Consiglio Direttivo</a>
+        <a href="storia.html" class="primary-button">La nostra storia</a>
+    </div>
+
+    <div class="photo-carousel">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)" aria-label="Foto precedente">‹</button>
+        <img id="carouselImage" src="galleria-1.jpg" alt="Galleria Associazione Alumni SUISS">
+        <button class="carousel-btn next" onclick="changeSlide(1)" aria-label="Foto successiva">›</button>
+    </div>
+</section>
+
+<section id="networking">
+    <h2>Networking e Community</h2>
+    <p class="section-intro">
+        La community Alumni SUISS è pensata come uno spazio di connessione tra profili accademici,
+        professionali, istituzionali e militari, con l'obiettivo di generare relazioni durevoli e occasioni concrete di collaborazione.
+    </p>
+
+    <div class="grid-3">
+        <div class="service-card">
+            <span class="tag">Community</span>
+            <h3>Gruppi tematici</h3>
+            <p>Spazi dedicati a sicurezza, difesa, geopolitica, cyber, intelligence, diplomazia, pubblica amministrazione e settore privato.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="tag">Territorio</span>
+            <h3>Chapter locali</h3>
+            <p>Reti territoriali per favorire incontri, contatti professionali e iniziative tra Alumni in Italia e all'estero.</p>
+        </div>
+
+        <div class="service-card">
+            <span class="tag">Relazioni</span>
+            <h3>Incontri Alumni</h3>
+            <p>Occasioni periodiche di confronto tra studenti, ex studenti, docenti, istituzioni e partner dell'Associazione.</p>
+        </div>
+    </div>
+</section>
+
+<section id="career">
+    <h2>Career & Opportunità</h2>
+    <p class="section-intro">
+        Una sezione dedicata alla crescita professionale degli Alumni e degli studenti, con strumenti di orientamento,
+        segnalazione di opportunità e valorizzazione delle competenze maturate nel percorso SUISS.
+    </p>
+
+    <div class="grid-2">
+        <div class="service-card">
+            <h3>Job board</h3>
+            <p>Area destinata alla pubblicazione di opportunità professionali, internship, bandi, call for application e collaborazioni.</p>
+            <a href="#contatti" class="primary-button">Segnala opportunità</a>
+        </div>
+
+        <div class="service-card">
+            <h3>Career talks</h3>
+            <p>Incontri con Alumni e professionisti per approfondire percorsi di carriera nei settori strategici, pubblici e privati.</p>
+            <a href="#news-eventi" class="primary-button">Vedi eventi</a>
+        </div>
+    </div>
+</section>
+
+<section id="directory">
+    <h2>Directory Alumni</h2>
+    <p class="section-intro">
+        La directory è pensata per facilitare la ricerca e il contatto tra membri della rete Alumni.
+        In una versione pubblica può mostrare solo profili autorizzati; in una versione privata può essere accessibile tramite login.
+    </p>
+
+    <div class="directory-preview">
+        <h3>Ricerca Alumni</h3>
+        <p>Modulo dimostrativo: per renderlo operativo su GitHub Pages serve collegarlo a un database esterno, a un foglio Google o a un servizio backend.</p>
+
+        <div class="search-row">
+            <input type="text" placeholder="Nome o cognome">
+            <select>
+                <option>Settore</option>
+                <option>Sicurezza e difesa</option>
+                <option>Pubblica amministrazione</option>
+                <option>Relazioni internazionali</option>
+                <option>Cybersecurity</option>
+                <option>Impresa e consulenza</option>
+            </select>
+            <select>
+                <option>Area geografica</option>
+                <option>Italia</option>
+                <option>Europa</option>
+                <option>Nord America</option>
+                <option>Asia</option>
+                <option>Altro</option>
+            </select>
+            <button type="button" onclick="alert('Funzione dimostrativa: collegare un database per la ricerca reale.')">Cerca</button>
+        </div>
+    </div>
+</section>
+
+<section id="mentorship">
+    <h2>Mentorship</h2>
+    <p class="section-intro">
+        Il programma mentorship collega studenti e giovani Alumni con profili più esperti,
+        favorendo orientamento, confronto professionale e trasmissione di competenze.
+    </p>
+
+    <div class="grid-3">
+        <div class="profile-card">
+            <h3>Per studenti</h3>
+            <p>Orientamento su percorsi accademici, tirocini, concorsi, prime esperienze professionali e scelta del settore.</p>
+        </div>
+
+        <div class="profile-card">
+            <h3>Per giovani Alumni</h3>
+            <p>Supporto nella transizione verso ruoli professionali, istituzionali, militari, diplomatici, aziendali o di ricerca.</p>
+        </div>
+
+        <div class="profile-card">
+            <h3>Per mentor</h3>
+            <p>Possibilità di contribuire alla crescita della community mettendo a disposizione esperienza, competenze e network.</p>
+        </div>
+    </div>
+
+    <a href="#contatti" class="primary-button">Diventa mentor</a>
+</section>
+
+<section id="news-eventi">
+    <h2>News ed eventi</h2>
+    <p class="section-intro">
+        In questa sezione sono raccolti aggiornamenti, incontri, conferenze, webinar, iniziative culturali e appuntamenti ufficiali dell'Associazione.
+    </p>
+
+    <div class="grid-3">
+        <div class="event-card">
+            <span class="tag">Evento</span>
+            <h3>Reunion Alumni</h3>
+            <p>Incontro annuale dedicato alla community Alumni SUISS, con momenti istituzionali e networking.</p>
+        </div>
+
+        <div class="event-card">
+            <span class="tag">Webinar</span>
+            <h3>Scienze strategiche oggi</h3>
+            <p>Panel tematici su sicurezza internazionale, difesa, geopolitica e trasformazioni dello scenario globale.</p>
+        </div>
+
+        <div class="event-card">
+            <span class="tag">Career</span>
+            <h3>Professioni strategiche</h3>
+            <p>Appuntamenti con Alumni e professionisti per raccontare percorsi, competenze e opportunità.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-preview">
+    <h2>Gallery</h2>
+    <div class="card">
+        <p>
+            Esplora le raccolte fotografiche degli eventi, degli incontri e delle iniziative promosse dall'Associazione Alumni SUISS.
+        </p>
+        <a href="gallery.html" class="primary-button">Vai alla Gallery</a>
+    </div>
+</section>
+
+<section id="ammissione">
+    <h2>Diventa socio</h2>
+    <div class="card">
+        <p>
+            Possono aderire Alumni, studenti, docenti e sostenitori secondo le categorie associative previste dallo Statuto.
+            La richiesta di ammissione può essere inviata attraverso il portale dedicato.
+        </p>
+        <a href="ammissione.html" class="primary-button">Accedi al portale iscrizioni</a>
+    </div>
+</section>
+
+<section id="newsletter">
+    <h2>Newsletter Alumni</h2>
+    <p class="section-intro">
+        Ricevi aggiornamenti su eventi, attività associative, opportunità professionali e iniziative della community.
+    </p>
+
+    <div class="newsletter-box">
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Modulo dimostrativo: collega un servizio newsletter come Mailchimp, Brevo o Google Forms.');">
+            <input type="email" placeholder="Inserisci la tua email" required>
+            <button type="submit">Iscriviti</button>
+        </form>
+    </div>
+</section>
+
+<section id="dona-ora" class="donate-section">
+    <h2>Dona ora</h2>
+    <p>
+        Sostieni le attività culturali, formative e professionali dell'Associazione Alumni SUISS.
+    </p>
+    <a href="#contatti" class="donate-button">Richiedi coordinate</a>
+</section>
+
+<section id="contatti" class="contacts-section">
+    <div class="contact-box">
+        <h3>Contatti</h3>
+        <p>Via dell'Arsenale 22<br>Torino (TO) 10121</p>
+        <p>+39 3274331196</p>
+        <p>segreteria@alumnisuiss.it</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Dona ora</h3>
+        <p>Coordinate IBAN</p>
+        <p>Inserire qui intestatario, IBAN e causale consigliata per donazioni o quote associative.</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Get Social</h3>
+        <p>Seguici sui nostri canali social ufficiali.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">◎</a>
+            <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="https://x.com/" target="_blank" aria-label="X">𝕏</a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">f</a>
+        </div>
+    </div>
+</section>
+
+<section id="trasparenza" class="transparency-section">
+    <h2>Amministrazione trasparente</h2>
+    <p>
+        In questa sezione sono pubblicati i documenti ufficiali dell'Associazione Alumni SUISS.
+    </p>
+
+    <div class="docs-grid">
+        <div class="doc-card">
+            <h3>Statuto</h3>
+            <p>Statuto ufficiale dell'Associazione Alumni SUISS.</p>
+            <a href="statuto.pdf" target="_blank" class="doc-button">Visualizza documento</a>
+        </div>
+
+        <div class="doc-card">
+            <h3>Informativa privacy</h3>
+            <p>Informativa sul trattamento dei dati personali ai sensi del GDPR.</p>
+            <a href="privacy.pdf" target="_blank" class="doc-button">Visualizza documento</a>
+        </div>
+
+        <div class="doc-card">
+            <h3>Altri documenti</h3>
+            <p>Area destinata alla pubblicazione di atti, regolamenti, bilanci e documentazione associativa.</p>
+            <a href="#" class="doc-button">In aggiornamento</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2026 Associazione Alumni SUISS - Tutti i diritti riservati</p>
+        <div class="footer-social">
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">◎</a>
+            <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="https://x.com/" target="_blank" aria-label="X">𝕏</a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">f</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const galleryImages = [
+    "galleria-1.jpg",
+    "galleria-2.jpg",
+    "galleria-3.jpg"
+];
+
+let currentSlide = 0;
+let autoSlideInterval;
+
+function changeSlide(direction) {
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = galleryImages.length - 1;
+    }
+
+    if (currentSlide >= galleryImages.length) {
+        currentSlide = 0;
+    }
+
+    updateImage();
+    restartAutoSlide();
+}
+
+function updateImage() {
+    const image = document.getElementById("carouselImage");
+    if (image) {
+        image.src = galleryImages[currentSlide];
+    }
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        currentSlide++;
+
+        if (currentSlide >= galleryImages.length) {
+            currentSlide = 0;
+        }
+
+        updateImage();
+    }, 4000);
+}
+
+function restartAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+window.onload = function () {
+    startAutoSlide();
+};
+</script>
+
+</body>
+</html>
